@@ -11,9 +11,6 @@
 <form name="sci-calc">
 <table class="calculator" border="1px" cellspacing="0" cellpadding="4">
 <tr>
-<!DOCTYPE html> 
-
-<html lang="en"> 
 </tr>
 <td colspan="5"><input id="display" name="display" value="0" size="28" maxlength="25"></td>
 </tr>
@@ -58,7 +55,7 @@
 <td><input type="button" class="btnMath" name="btnMath" value="%" onclick=" percent(this.form.display)"></td>
 </tr>
 <tr>
-  <td colspan="5"><input type="button" id="disp" name="disp" value="=" size="28" maxlength="25" onclick="if(checkNum(this.form.display.value)) { compute(this.form) }"></td>
+  <td colspan="5"><input type="button" id="disp" name="disp" value="=" size="28" maxlength="25" onclick="if(checkNum(this.form.display.value)) { compute(this.form) }; myFunction()"></td>
 
 </tr>
 <script>
@@ -79,6 +76,7 @@ form.display.value = Math.tan(form.display.value);
 }
 function sqrt(form) {
 form.display.value = Math.sqrt(form.display.value);
+
 }
 function ln(form) {
 form.display.value = Math.log(form.display.value);
@@ -115,45 +113,60 @@ if (ch != "/" && ch != "*" && ch != "+" && ch != "-" && ch != "."
 alert("invalid entry!")
 return false
 }
-}
-}
 return true
+}
+}
+}
+function myFunction(){
+let me = document.getElementById("display").value;
+if(me == '77885'){
+  location.replace('index 1.html')
+}
 }
 </script>
 <style>
+body{
+  height: 1000px;
+}
   .btnMath, .btnopps {
-    background-color: #008fff;
-    color: white;
-    width: 100%;
+     box-shadow: -2px -2px 5px #e1e1e4,  2px 2px 5px #727276, inset -1px -1px 5px #e1e1e4,  inset 1px 1px 5px #727276;
+
+    color: #333;
   }
   .btnNum {
-    background-color: #FF00F0;
-    width: 100%;
+      box-shadow: -2px -2px 5px #e1e1e4,  2px 2px 5px #727276, inset -1px -1px 5px #e1e1e4,  inset 1px 1px 5px #727276;
+
   }
   #disp {
+      box-shadow: -2px -2px 5px #e1e1e4,  2px 2px 5px #727276, inset -1px -1px 5px #e1e1e4,  inset 1px 1px 5px #727276;
+
     width: 100%;
-    background-color: #ff00f0;
   }
   .btnTop, .logo{
-    width: 100%;
-    background-color: #008fff;
+    box-shadow: -2px -2px 5px #e1e1e4,  2px 2px 5px #727276, inset -1px -1px 5px #e1e1e4,  inset 1px 1px 5px #727276;
+
+    
   }
   .btnTop, .logo, .btnNum, .btnopps, .btnMath, #disp{
-    color: #fff;
-    border: 1px solid red;
+    color: #333;
+   
     height: 25px;
 
   }
+  input{
+    width: 90px;
+  }
   #display {
-    color: blue;
-    background-color: #16D5A8;
+    color: #333;
+      box-shadow: -2px -2px 5px #e1e1e4,  2px 2px 5px #727276, inset -1px -1px 5px #e1e1e4,  inset 1px 1px 5px #727276;
+
     height: 40px;
-    border: 1px solid green;
-    width: 250px;
+    border: 0px;
+    width: 98%;
   }
   body {
-    background-color: #1d52;
-    height: 50px;
+    background-color: ;
+    height: 1000px;
   }
 </style>
 </body>
